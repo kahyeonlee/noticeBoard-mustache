@@ -1,9 +1,13 @@
 package com.mustache.noticeboard.controller;
 
+import com.mustache.noticeboard.domain.dto.ArticleAddRequest;
+import com.mustache.noticeboard.domain.dto.ArticleAddResponse;
 import com.mustache.noticeboard.domain.dto.ArticleDto;
 import com.mustache.noticeboard.domain.entity.Article;
 import com.mustache.noticeboard.repository.ArticleRepository;
+import com.mustache.noticeboard.service.ArticleService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -79,4 +83,5 @@ public class ArticleController {
         model.addAttribute("message", String.format("id: %d가 지워졌습니다.",id));
         return "redirect:/articles";
     }
+
 }

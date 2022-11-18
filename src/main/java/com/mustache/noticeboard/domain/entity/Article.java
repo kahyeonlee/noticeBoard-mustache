@@ -1,14 +1,17 @@
 package com.mustache.noticeboard.domain.entity;
 
+import com.mustache.noticeboard.domain.dto.ArticleDto;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-
-@Entity
 @Getter
-@Table(name = "articleA")
+@Entity
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class Article {
 
     @Id
@@ -21,4 +24,9 @@ public class Article {
         this.title = title;
         this.content = content;
     }
+
+    public static ArticleDto of(Article article){
+        return new ArticleDto(article.getId(), article.getTitle(), article.getContent());
+    }
+
 }

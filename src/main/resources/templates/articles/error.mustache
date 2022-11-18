@@ -1,5 +1,8 @@
 <div>이 페이지는 error 페이지 입니다.</div>
 
-{{#message}}
-    {{id}}
-{{/message}}
+{{>layouts/header}}
+error.
+{{error}}
+<br />
+{{path}}
+{{>layouts/footer}}
